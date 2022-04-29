@@ -1,0 +1,64 @@
+% File  : beamerouterthemenesc.sty
+% Author: Shiki
+% Date  : 2022-04-28
+
+% Custom headline
+\defbeamertemplate*{headline}{nesc}{
+  \begin{beamercolorbox}[sep=10pt]{headline}
+    \usebeamerfont{headline}
+    \leftskip = 0.5ex
+    \ifx\insertsubsection\@empty
+      \ifx\insertsection\@empty
+        Add Names 
+      \else
+        \textbf{\insertsection}
+      \fi
+    \else
+      \textbf{\insertsubsection}
+    \fi
+  \end{beamercolorbox}
+  
+  \begin{beamercolorbox}[]{splitline}
+    \makebox{\rule{\paperwidth}{3pt}}
+  \end{beamercolorbox}
+  \vspace*{1ex}
+}
+
+% Custom footline
+\defbeamertemplate*{footline}{nesc}{
+  \hbox{
+    \begin{beamercolorbox}[wd=.2\paperwidth, center]{footline}
+      \usebeamerfont{footline}
+      \textbf{\insertreporter}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.6\paperwidth, center]{footline}
+      \usebeamerfont{footline}
+      \textbf{\inserttitle}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.2\paperwidth, center]{footline}
+      \usebeamerfont{footline}
+      \textbf{\insertframenumber}
+    \end{beamercolorbox}
+  }
+  \vspace*{1ex}
+}
+
+% frame title
+\defbeamertemplate*{frametitle}{nesc}{
+  \def\@contents{CONTENTS}
+  \ifx\insertframetitle\@empty
+  \else
+    \ifx\beamer@frametitle\@contents
+      \vspace*{3.5ex}
+      \begin{beamercolorbox}[]{}
+        \usebeamerfont{contenttitle}
+        \textbf{\insertframetitle}
+      \end{beamercolorbox}
+    \else
+      \usebeamerfont{frametitle}
+      \vspace*{1ex}
+      \hspace*{-2ex}
+      \textbf{\insertframetitle}
+    \fi
+  \fi
+}

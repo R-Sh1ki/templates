@@ -1,0 +1,31 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{Inner Theme}{3}{Inner Theme}{0}}
+\headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Item/Enum env}}
+\headcommand {\slideentry {1}{1}{1}{4/4}{Item/Enum env}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{5}{Enumerate env}}
+\headcommand {\beamer@subsectionpages {5}{4}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{5}{Description env}}
+\headcommand {\beamer@sectionpages {3}{4}}
+\headcommand {\beamer@subsectionpages {5}{4}}
+\headcommand {\sectionentry {2}{item section}{5}{item section}{0}}
+\headcommand {\slideentry {2}{0}{1}{5/5}{}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{6}{item subsection}}
+\headcommand {\slideentry {2}{1}{1}{6/6}{item subsection}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@partpages {1}{6}}
+\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\beamer@sectionpages {5}{6}}
+\headcommand {\beamer@documentpages {6}}
+\headcommand {\gdef \inserttotalframenumber {2}}

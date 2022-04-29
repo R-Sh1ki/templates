@@ -1,0 +1,87 @@
+% File  : beamerinnerthemenesc.sty
+% Author: Shiki
+% Date  : 2022-04-28
+
+\mode<presentation>
+
+% Some custom variables for title page.
+
+% conference 
+\newcommand\insertconference{}
+\newcommand\conference[1]{\renewcommand\insertconference{#1}}
+% reporter
+\newcommand\insertreporter{}
+\newcommand\reporter[1]{\renewcommand\insertreporter{#1}}
+% email
+\newcommand\insertemail{}
+\newcommand\email[1]{\renewcommand\insertemail{#1}}
+
+% Custom title page contains `conference`, `title`, `subtitle`, `authors`, `reporter`,
+% `email` and `date`.
+\defbeamertemplate*{title page}{nesc}{
+  % conference
+  \begin{beamercolorbox}[sep=16pt, center]{conference}
+    \usebeamerfont{conference}
+    \textbf{\insertconference}
+  \end{beamercolorbox}
+  \vfill
+
+  % report title and subtitle (if it's existed)
+  \begin{beamercolorbox}[sep=4pt, center]{title}
+    \usebeamerfont{title}
+    \inserttitle \par
+    \ifx\insertsubtitle\@empty
+    \else
+      \usebeamerfont{subtitle}
+      \vspace*{1.2ex}
+      —— \insertsubtitle
+    \fi
+  \end{beamercolorbox}
+  \vfill
+
+  % paper authors and their institutes.
+  \begin{beamercolorbox}[center]{}
+    \usebeamerfont{author}
+    \insertauthor \par%
+    \vspace*{2.5ex}
+    \insertinstitute
+  \end{beamercolorbox}
+  \vfill
+  
+  % reporter and email
+  \begin{beamercolorbox}[center]{reportinfo}
+    \usebeamerfont{reporter}
+    Reporter: \insertreporter \par%
+    \usebeamerfont{email}
+    E-mail: <\insertemail> \par%
+    \vspace*{2ex}
+    \usebeamerfont{date}
+    \insertdate
+  \end{beamercolorbox}
+  \vfill
+}
+
+\defbeamertemplate*{section in toc}{square unnumbered}{
+  \leavevmode
+  \leftskip = 6ex
+  \usebeamerfont{sec}
+  \textcolor[RGB]{192, 0, 0}{
+    $\blacksquare$
+  }%
+  \textcolor{black}{\inserttocsection} \par
+}
+
+\defbeamertemplate*{subsection in toc}{square unnumbered}{
+  \leavevmode
+  \leftskip = 10ex
+  \usebeamerfont{subsec}
+  \textcolor[RGB]{192, 0, 0}{
+    $\bullet$
+  }%
+  \textcolor{black}{\inserttocsubsection} \par
+}
+%\defbeamertemplate*{itemize item}{\usebeamerfont{itemize item}\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+%\setbeamertemplate{itemize item}
+%\defbeamertemplate*{itemize items}{\color{blue}$\bullet$}
+\setbeamertemplate{itemize item}{\usebeamerfont{itemize item} $\bullet$}
+%\defbeamertemplate*{itemize items}{\usebeamerfont{itemize item}$bullet$}

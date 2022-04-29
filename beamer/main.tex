@@ -1,0 +1,102 @@
+% !Tex program = xelatex
+\documentclass[20pt]{beamer}
+
+% Set the same paper width and height as .pptx(default is [4:3]).
+% [4:3] width = 25.4cm height = 19.05cm
+% [16:9] width = 25.4cm height = 14.288cm
+\usepackage{geometry}
+\geometry{paperwidth = 25.4cm, paperheight = 19.05cm}
+\setbeamersize{text margin left = 2cm}
+\setbeamersize{text margin right = 2cm}
+
+% text-align justify
+\usepackage{xpatch}
+\usepackage{ragged2e}
+\justifying\let\raggedright\justifying
+% itemize text-align justify
+%\xpatchcmd{\itemize}{\raggedright}{\justifying}
+
+% Use custom theme `NESC`
+\usepackage{theme/beamerfontthemenesc}
+\usepackage{theme/beamercolorthemenesc}
+\usepackage{theme/beamerinnerthemenesc}
+\usepackage{theme/beamerouterthemenesc}
+\usepackage{theme/beamerthemenesc}
+
+% Basic info on title page
+\conference{xxx Meeting on Apr. 28th}
+\title{How to Use Beamer}
+\subtitle{how to ...}
+\reporter{Shiki}
+\author{Shiki \inst{1}}
+\institute{\inst{1} xxxx}
+\email{xxxx.xx@outlook.com}
+\date{\today}
+
+% Add table of contents at the begin of section.
+\AtBeginSection[]{
+  \begin{frame}[plain]
+    \tableofcontents[
+      sectionstyle=show/shaded,
+      subsectionstyle=show,
+      hideothersubsections]
+    \addtocounter{framenumber}{-1}
+  \end{frame}
+}
+
+% adjust itemize and enumerate indent
+\setlength{\leftmargini}{2em}
+\setlength{\leftmarginii}{1em}
+\setlength{\leftmarginiii}{1em}
+
+\begin{document}
+  \yaihe
+  % Title page
+  \begin{frame}[plain]
+    \titlepage
+    \addtocounter{framenumber}{-1}
+  \end{frame}
+  % Contents
+  \begin{frame}[plain]
+    \frametitle{CONTENTS}
+    \tableofcontents[hideallsubsections]
+    \addtocounter{framenumber}{-1}
+  \end{frame}
+
+  \section{Inner Theme}
+  \subsection{Item/Enum env}
+  \begin{frame}[allowframebreaks, t]
+    normal normalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormal
+    \par
+    The itemize style
+    \begin{itemize}
+    	\item item level 1
+        \begin{itemize}
+        	\item item level 2
+            \begin{itemize}
+            	\item item level 3
+                normal
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+    The enumerate style:
+    \begin{enumerate}
+    	\item enum level 1
+        \begin{enumerate}
+        	\item enum level 2
+            \begin{enumerate}
+            	\item enum level 3
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+    normal size doesn't work may
+  \end{frame}
+  \subsection{Enumerate env}
+  \subsection{Description env}
+  \section{item section}
+  \subsection{item subsection}
+  \begin{frame}[t]{ite}
+    test
+  \end{frame}
+\end{document}
