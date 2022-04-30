@@ -1,0 +1,22 @@
+% !TEX root = ../main.tex
+
+\section{Code Env}
+
+\begin{frame}[fragile]
+  \begin{commentBox}{My first comment}{first}
+    My first comment here! \faTree
+  \end{commentBox}
+
+  \begin{codeBox}{python}{test.py}{{2-4}}{test1}
+    import numpy as np
+    a = 1
+    b = 2
+    print("{}".format{a+b})
+  \end{codeBox}
+
+  \codeFileBox{python}{code/test.py}{test.py}{3}{7}{{2}}{test2}
+\end{frame}
+
+\begin{frame}
+  See \fullref{comm:first} for details. Two programs are listed: \Fullref{program:test1}, \fullref{program:test2}
+\end{frame}

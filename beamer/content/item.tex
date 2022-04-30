@@ -1,0 +1,42 @@
+% !TEX root = ../main.tex
+
+\section{Items Env}
+
+\begin{frame}[allowframebreaks, t]
+  The itemize and enumerate style of nesc theme.
+  \par
+  The itemize style
+  \begin{itemize}
+    \item item level 1
+    test test test test test test test test test test test test test
+    \begin{itemize}
+      \item item level 2
+      \begin{itemize}
+        \item item level 3
+          normal
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+
+  The enumerate style
+  \begin{enumerate}
+    \item enum level 1
+    \begin{enumerate}
+      \item enum level 2
+      \begin{enumerate}
+        \item enum level 3
+      \end{enumerate}
+    \end{enumerate}
+  \end{enumerate}
+
+  \begin{description}
+    \item[desc 1]
+      test test test test test test test test test test test test test
+      test test test test test test test test test test test test test
+    \begin{description}
+      \item[desc 1]
+        test test test test test test test test test test test test test
+        test test test test test test test test test test test test test
+    \end{description}
+  \end{description}
+\end{frame}

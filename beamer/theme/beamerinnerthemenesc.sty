@@ -4,6 +4,7 @@
 
 \mode<presentation>
 
+%\RequirePackage{enumitem}
 % Some custom variables for title page.
 
 % conference 
@@ -80,8 +81,142 @@
   }%
   \textcolor{black}{\inserttocsubsection} \par
 }
-%\defbeamertemplate*{itemize item}{\usebeamerfont{itemize item}\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
-%\setbeamertemplate{itemize item}
-%\defbeamertemplate*{itemize items}{\color{blue}$\bullet$}
-\setbeamertemplate{itemize item}{\usebeamerfont{itemize item} $\bullet$}
-%\defbeamertemplate*{itemize items}{\usebeamerfont{itemize item}$bullet$}
+
+% adjust itemize and enumerate indent
+\setlength{\leftmargini}{1.25em}
+\setlength{\leftmarginii}{1.25em}
+\setlength{\leftmarginiii}{1.25em}
+
+%\setlength{\labelindent}{0.0em}
+%\setlength{\itemindent}{0.0em}
+\setlength{\labelsep}{0.25em}
+\setlength{\leftmargin}{1em}
+
+\defbeamertemplate*{itemize item}{nesc}{
+  \usebeamerfont{itemize item}
+  \usebeamercolor{itemize item}
+  \textbf{$\blacksquare$} 
+}
+\defbeamertemplate*{itemize subitem}{nesc}{
+  \usebeamerfont{itemize subitem}
+  \usebeamercolor{itemize subitem}
+  \textbf{$\blacktriangleright$} 
+}
+\defbeamertemplate*{itemize subsubitem}{nesc}{
+  \usebeamerfont{itemize subsubitem}
+  \usebeamercolor{itemize subsubitem}
+  \textbf{$\bullet$} 
+}
+
+\newcounter{commentCounter}
+\newcounter{programCounter}
+
+\RequirePackage{ifthen}
+\RequirePackage{fontawesome}
+\RequirePackage{xcolor}
+\RequirePackage{tabularx}
+\newcolumntype{\CeX}{>{\centering\let\newline\\\arraybackslash}X}%
+\newcommand{\TwoSymbolsAndText}[3]{
+  \begin{tabularx}{\textwidth}{c\CeX c}%
+    #1 & #2 & #3
+  \end{tabularx}
+}
+\RequirePackage[cache=true,outputdir=./build]{minted}
+\RequirePackage[many]{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{minted}
+
+\newtcolorbox[use counter=commentCounter, number format=\arabic]{commentBox}[2]{
+  size=title,
+  arc=1.5mm,
+  breakable,
+  enhanced jigsaw,
+  colframe=maingray,
+  coltitle=white,
+  boxrule=0.5mm,
+  colback=white,
+  coltext=maingray,
+  title=\TwoSymbolsAndText{\faCheck}{
+    \yahei{
+      \textbf{Comment \thetcbcounter}
+      \ifthenelse{\equal{#1}{}}{}{\textbf{:} #1}
+    }
+  }{\faCheck},
+  label=comm:#2
+}
+
+\newtcblisting[use counter=programCounter, number format=\arabic]{codeBox}[4]{
+  listing engine=minted,
+  minted language=#1,
+  minted options={
+    linenos,
+    autogobble,
+    breaklines,
+    fontsize=\small,
+    highlightlines=#3,
+    highlightcolor=mainred!20!white
+  },
+  listing only,
+  size=title,
+  arc=1.5mm,
+  breakable,
+  enhanced jigsaw,
+  colframe=mainblue,
+  coltitle=white,
+  boxrule=0.5mm,
+  colback=white,
+  coltext=black,
+  title=\TwoSymbolsAndText{\faCode}{
+    \yahei{
+      \textbf{Program \thetcbcounter}
+      \ifthenelse{\equal{#2}{}}{}{\textbf{:} #2}
+    }
+  }{\faCode},
+  label=program:#4
+}
+
+\newtcbinputlisting[use counter=programCounter, number format=\arabic]{\codeFileBox}[7]{%
+  listing engine=minted,
+  minted language=#1,
+  listing file={#2},
+  minted options={
+    linenos,
+    autogobble,
+    breaklines,
+    fontsize=\small,
+    firstline=#4,
+    lastline=#5,
+    firstnumber=1,
+    highlightlines=#6,
+    highlightcolor=mainred!20!white
+  },
+  listing only,
+  size=title,
+  arc=1.5mm,
+  breakable,
+  enhanced jigsaw,
+  colframe=mainblue,
+  coltitle=white,
+  boxrule=0.5mm,
+  colback=white,
+  coltext=black,
+  title=\TwoSymbolsAndText{\faCode}{
+    \yahei{
+      \textbf{Program \thetcbcounter}
+      \ifthenelse{\equal{#3}{}}{}{\textbf{:} #3}
+    }
+  }{\faCode},
+  label=program:#7,
+}
+
+\RequirePackage{hyperref}
+\RequirePackage{cleveref}
+\crefname{commentCounter}{comment}{comments}
+\Crefname{commentCounter}{Comment}{Comments}
+\crefname{programCounter}{program}{programs}
+\Crefname{programCounter}{Program}{Programs}
+
+\newcommand{\fullref}[1]{\namecref{#1} \ref{#1}}
+\newcommand{\Fullref}[1]{\nameCref{#1} \ref{#1}}
+
+\setbeamertemplate{bibliography item}[text]

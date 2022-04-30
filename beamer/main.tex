@@ -1,5 +1,5 @@
 % !Tex program = xelatex
-\documentclass[20pt]{beamer}
+\documentclass[20pt, fontset=none]{beamer}
 
 % Set the same paper width and height as .pptx(default is [4:3]).
 % [4:3] width = 25.4cm height = 19.05cm
@@ -14,7 +14,7 @@
 \usepackage{ragged2e}
 \justifying\let\raggedright\justifying
 % itemize text-align justify
-%\xpatchcmd{\itemize}{\raggedright}{\justifying}
+% \xpatchcmd{\itemize}{\raggedright}{\justifying}
 
 % Use custom theme `NESC`
 \usepackage{theme/beamerfontthemenesc}
@@ -44,59 +44,32 @@
   \end{frame}
 }
 
-% adjust itemize and enumerate indent
-\setlength{\leftmargini}{2em}
-\setlength{\leftmarginii}{1em}
-\setlength{\leftmarginiii}{1em}
+% \usepackage[backend=bibtex, sorting=none]{biblatex}
+% \addbibresource{main.bib}
+\defaultfontfeatures[FandolSong]{Script=Default}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
+% \usepackage{amsmath,amsfonts,amssymb,bm}
+% \usepackage{color}
+\usepackage{graphicx,hyperref,url}
+% \usepackage{comment}
+\usepackage{lmodern}
+\usepackage{xcolor}
+% \usepackage{subcaption}
+% \usepackage{booktabs}
+% \usepackage{graphbox}
+% \usepackage{arydshln}
+\usepackage{blindtext}
+\parindent=0pt
 
 \begin{document}
-  \yaihe
-  % Title page
-  \begin{frame}[plain]
-    \titlepage
-    \addtocounter{framenumber}{-1}
-  \end{frame}
-  % Contents
-  \begin{frame}[plain]
-    \frametitle{CONTENTS}
-    \tableofcontents[hideallsubsections]
-    \addtocounter{framenumber}{-1}
-  \end{frame}
-
-  \section{Inner Theme}
-  \subsection{Item/Enum env}
-  \begin{frame}[allowframebreaks, t]
-    normal normalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormal
-    \par
-    The itemize style
-    \begin{itemize}
-    	\item item level 1
-        \begin{itemize}
-        	\item item level 2
-            \begin{itemize}
-            	\item item level 3
-                normal
-            \end{itemize}
-        \end{itemize}
-    \end{itemize}
-
-    The enumerate style:
-    \begin{enumerate}
-    	\item enum level 1
-        \begin{enumerate}
-        	\item enum level 2
-            \begin{enumerate}
-            	\item enum level 3
-            \end{enumerate}
-        \end{enumerate}
-    \end{enumerate}
-    normal size doesn't work may
-  \end{frame}
-  \subsection{Enumerate env}
-  \subsection{Description env}
-  \section{item section}
-  \subsection{item subsection}
-  \begin{frame}[t]{ite}
-    test
-  \end{frame}
+  \begin{sloppypar}
+  \include{content/titlepage}
+  \include{content/toc}
+  \include{content/item}
+  \include{content/block}
+  \include{content/code}
+  \include{content/references}
+  \end{sloppypar}
 \end{document}
