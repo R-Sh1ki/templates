@@ -6,4 +6,4 @@ if a > 0:
 
 b = 2
 
-print("Result: {}".format{a + b})
+print("Result: {}".format(a + b))

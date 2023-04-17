@@ -1,11 +1,11 @@
-% !Tex program = xelatex
 \documentclass[20pt, fontset=none]{beamer}
 
 % Set the same paper width and height as .pptx(default is [4:3]).
 % [4:3] width = 25.4cm height = 19.05cm
 % [16:9] width = 25.4cm height = 14.288cm
 \usepackage{geometry}
-\geometry{paperwidth = 25.4cm, paperheight = 19.05cm}
+% \geometry{paperwidth = 25.4cm, paperheight = 19.05cm}
+\geometry{paperwidth = 25.4cm, paperheight = 14.288cm}
 \setbeamersize{text margin left = 2cm}
 \setbeamersize{text margin right = 2cm}
 
@@ -23,14 +23,14 @@
 \usepackage{theme/beamerouterthemenesc}
 \usepackage{theme/beamerthemenesc}
 
-% Basic info on title page
-\conference{xxx Meeting on Apr. 28th}
-\title{How to Use Beamer}
+% % Basic info on title page
+\conference{Group Meeting}
+\title{An Introduction to something or something}
 \subtitle{how to ...}
 \reporter{Shiki}
 \author{Shiki \inst{1}}
-\institute{\inst{1} xxxx}
-\email{xxxx.xx@outlook.com}
+\institute{\inst{1} where are you from}
+\email{xxx@xx.com}
 \date{\today}
 
 % Add table of contents at the begin of section.
@@ -46,11 +46,11 @@
 
 % \usepackage[backend=bibtex, sorting=none]{biblatex}
 % \addbibresource{main.bib}
-\defaultfontfeatures[FandolSong]{Script=Default}
-\usepackage{fontspec}
-\usepackage{xeCJK}
+% \defaultfontfeatures[FandolSong]{Script=Default}
+% \usepackage{fontspec}
+% \usepackage{xeCJK}
 
-% \usepackage{amsmath,amsfonts,amssymb,bm}
+\usepackage{amsmath, amssymb, amsfonts}
 % \usepackage{color}
 \usepackage{graphicx,hyperref,url}
 % \usepackage{comment}
@@ -58,10 +58,14 @@
 \usepackage{xcolor}
 % \usepackage{subcaption}
 % \usepackage{booktabs}
+\usepackage{bookmark}
 % \usepackage{graphbox}
 % \usepackage{arydshln}
 \usepackage{blindtext}
 \parindent=0pt
+% let math use serif font
+\usefonttheme[onlymath]{serif}
+
 
 \begin{document}
   \begin{sloppypar}

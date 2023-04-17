@@ -4,7 +4,7 @@
 
 \mode<presentation>
 
-%\RequirePackage{enumitem}
+% \RequirePackage{enumitem}
 % Some custom variables for title page.
 
 % conference 
@@ -28,33 +28,33 @@
   \vfill
 
   % report title and subtitle (if it's existed)
-  \begin{beamercolorbox}[sep=4pt, center]{title}
+  \begin{beamercolorbox}[sep=2ex, center]{title}
     \usebeamerfont{title}
     \inserttitle \par
     \ifx\insertsubtitle\@empty
     \else
       \usebeamerfont{subtitle}
-      \vspace*{1.2ex}
+      \vspace*{-4ex}
       —— \insertsubtitle
     \fi
   \end{beamercolorbox}
   \vfill
 
   % paper authors and their institutes.
-  \begin{beamercolorbox}[center]{}
+  \begin{beamercolorbox}[sep=1ex, center]{}
     \usebeamerfont{author}
     \insertauthor \par%
-    \vspace*{2.5ex}
+    \vspace*{1.5ex}
     \insertinstitute
   \end{beamercolorbox}
   \vfill
-  
+  \vspace*{1ex}
   % reporter and email
   \begin{beamercolorbox}[center]{reportinfo}
     \usebeamerfont{reporter}
     Reporter: \insertreporter \par%
     \usebeamerfont{email}
-    E-mail: <\insertemail> \par%
+    E-mail: \insertemail \par%
     \vspace*{2ex}
     \usebeamerfont{date}
     \insertdate
@@ -137,7 +137,7 @@
   colback=white,
   coltext=maingray,
   title=\TwoSymbolsAndText{\faCheck}{
-    \yahei{
+    \rmfamily{
       \textbf{Comment \thetcbcounter}
       \ifthenelse{\equal{#1}{}}{}{\textbf{:} #1}
     }
@@ -167,7 +167,7 @@
   colback=white,
   coltext=black,
   title=\TwoSymbolsAndText{\faCode}{
-    \yahei{
+    \rmfamily{
       \textbf{Program \thetcbcounter}
       \ifthenelse{\equal{#2}{}}{}{\textbf{:} #2}
     }
@@ -201,7 +201,7 @@
   colback=white,
   coltext=black,
   title=\TwoSymbolsAndText{\faCode}{
-    \yahei{
+    \rmfamily{
       \textbf{Program \thetcbcounter}
       \ifthenelse{\equal{#3}{}}{}{\textbf{:} #3}
     }
